@@ -1,1 +1,3 @@
 Olá, amigo. Seja bem  vindo a sessão de exercícios. Aqui terão alguns exercícios que servem para fixar o conhecimento sobre constantes e variaveis
+
+O enunciado dos exercícios e a solução estão no próprio código
