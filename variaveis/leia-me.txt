@@ -1,0 +1,4 @@
+*Proposito da aula*
+1 - Entender o conceito de variavel.
+2 - Estudar o comportamento de uma variavel.
+3 - Apresentando o tipo de dado undefined.
