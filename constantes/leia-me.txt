@@ -1,0 +1,4 @@
+*Proposito da aula*
+1 - Entender o conceito de constantes
+2 - Entender o comportamento das constantes no código
+3 - Exemplificar esse comportamento com um exercício
