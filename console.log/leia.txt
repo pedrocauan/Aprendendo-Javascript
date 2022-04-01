@@ -1,6 +1,6 @@
  *Propósito da aula*
  
  1 - Apresentar a função console.log
- 2 - exibi-la no navegador e também em ambiente desktop com o nodejs
+ 2 - exibi-la em ambiente desktop com o nodejs
  3 - Apresentação do conceito de strings e tipos de dados
  4 - Apresentar operadores de concatenação ("+" e ",")
