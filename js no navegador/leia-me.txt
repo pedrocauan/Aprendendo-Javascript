@@ -1,0 +1,4 @@
+*Proposito da Aula*
+1- Mostrar a execução do javascript no navegador.
+2- Apresentar o comando alert que tem como função exibir uma mensagem interativa com o usuario
+2- Mostrar o console.log no navegador
