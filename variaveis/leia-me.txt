@@ -2,3 +2,4 @@
 1 - Entender o conceito de variavel.
 2 - Estudar o comportamento de uma variavel.
 3 - Apresentando o tipo de dado undefined.
+4 - Regras para a criação das variaveis
