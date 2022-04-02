@@ -1,0 +1,4 @@
+*Proposito da aula*
+1 - Entender quais são os tipos de dados do javascript
+2 - Entender o conceito de Tipagem Dinâmica
+3 - Utilizar a função typeoff para analisar os tipos de dados dentro de uma variável
