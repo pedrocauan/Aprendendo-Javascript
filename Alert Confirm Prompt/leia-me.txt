@@ -1,0 +1,4 @@
+*Proposito da Aula*
+1 - Apresentação sobre o objeto window
+2 - Explicação e utilização das funções alert,  confirm e prompt
+3 - Guardar dados de um prompt ou confirm em variaveis.
