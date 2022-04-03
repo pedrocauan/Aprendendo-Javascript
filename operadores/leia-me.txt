@@ -1,0 +1,4 @@
+*Propósito da aula*
+1 - Apresentar os operadores aritméticos em javascript
+2 - Entender sua ordem de precedência
+3 - Apresentar os operadores de incremento ++, --, +=, -=, *=, **=
