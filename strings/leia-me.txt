@@ -1,0 +1,4 @@
+*Proposito da Aula*
+Cara, é tanta coisa que eu já nem sei o que colocar.
+
+- Muita coisa relacionada a string
