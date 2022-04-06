@@ -1,8 +1,11 @@
-
+/*Todas as funções fazem a mesma coisa, o que muda vai ser o atributo src da tag iframe passada como string*/
 
 function eleGosta() {
-    window.document.body.innerHTML += `<iframe width="560" height="315" src="https://www.youtube.com/embed/b7E0xhVXRTQ?&autoplay=1" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>`
     
+    //adicionar: ?&autoplay=1 no final do link. Ex: 
+    //o link https://www.youtube.com/embed/b7E0xhVXRTQ vira https://www.youtube.com/embed/b7E0xhVXRTQ?&autoplay=1
+    
+    window.document.body.innerHTML += `<iframe width="560" height="315" /*link do video aqui -->*/src="https://www.youtube.com/embed/b7E0xhVXRTQ?&autoplay=1" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>`  
 }
 
 
