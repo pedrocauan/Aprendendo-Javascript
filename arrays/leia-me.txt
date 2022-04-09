@@ -1,0 +1,6 @@
+*Proposito da aula*
+
+1 - Entender o funcionamento dos arrays
+2 - Aprender a manipular arrays com as funções push, shift, unshift, slice.
+3 - Remover itens de um array
+4 - Entender o tipo de dado que pertence um array
