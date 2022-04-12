@@ -1,0 +1,5 @@
+*Proposito da aula*
+1 - Apresentação do conceito de tipos de dados primitivos
+2 - Observação do comportamento imutável do tipo de dado primitivo.
+3 - Apresentação do tipo de dado passado por referência.
+4 - Comportamento do tipo de dado passado por referencia.
