@@ -1,0 +1,4 @@
+*Propósito da Aula*
+- Entender a sintaxe da estrutura condicional if
+- Tipos de estruturas condicionais
+- Exemplos
