@@ -1,0 +1,7 @@
+*Propósito da Aula*
+
+- Entender o comportament dos operadores lógicos || e &&
+- Entender a diferença entre valor falso literal e falso representado
+- Entender quais valores me javascript representam false
+- Entender os short circuits
+- Entender como aplicar short circuits
