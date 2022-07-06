@@ -47,7 +47,5 @@ const FizzBuzz = (n) => {
         return "Fizz";
 }
 
-for(let i = 1; i <= 100; i++)
-    console.log(FizzBuzz(i));
 
 
