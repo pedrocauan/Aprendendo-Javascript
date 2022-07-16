@@ -4,7 +4,7 @@ function cumprimento(nome){
     
     return `Bom dia ${nome}`;
     
-    //caso uma função nao retor nada, ela retorna por padrao undefined
+    //caso uma função nao retorne nada, ela retorna por padrao undefined
 }
 
 
