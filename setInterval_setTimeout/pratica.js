@@ -13,5 +13,5 @@ const minutes = setInterval(() => {
 })
 
 const timer = setInterval(() =>{
-    console.log(`${min}:${sec}`)
+    console.log(`${min}:${sec< 10? `0`+sec: sec }`) //adiciona o 0 quando os segundos forem menores que 10
 }, 1000)
