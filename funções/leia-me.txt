@@ -1,3 +1,0 @@
-*Proposito da aula*
-1 - Apresentando o basico sobre funções
-2 - Implementação  das arrow functions

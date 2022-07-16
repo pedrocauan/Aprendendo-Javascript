@@ -1,4 +1,6 @@
+// === O arquivo prática é usado para  praticar durante as video aulas ===
 
+// hoisting é poder executar a função em qualquer canto do código uma vez que ela ja ta declarada
 falaOi()
 //declaração de função (function hoisting)
 function falaOi(){
@@ -38,5 +40,4 @@ const obj = {
     }
 }
 obj.fala()
-
 
