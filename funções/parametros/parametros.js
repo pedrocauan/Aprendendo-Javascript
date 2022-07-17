@@ -1,4 +1,3 @@
-// === O arquivo prática é usado para  praticar durante as video aulas ===
 
 // function funcao(a,b,c){
 //     //Dentro  do escopo existe uma variavel chamada arguments que guarda todos os valores passados na chamada dela
