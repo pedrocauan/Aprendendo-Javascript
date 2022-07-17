@@ -48,10 +48,60 @@
 // funcao(pessoa)
 
 
-// === ATRIBUIÇÃO VIA DESESTRUTURAÇÃO DE ARRAY ===
+/* === ATRIBUIÇÃO VIA DESESTRUTURAÇÃO DE ARRAY === */
+// function funcao([valor1,valor2,valor3]) {
+//     console.log(valor1,valor2,valor3)
+// }
+// const pessoa = ['Pedrinho', 'doze', 30]
+// funcao(pessoa)
 
-function funcao([valor1,valor2,valor3]) {
-    console.log(valor1,valor2,valor3)
+
+/*=== REST OPERATOR ===*/
+//Faz as 4 operacoes basica
+//                                   /* array */
+// function conta(operador, acumulador, ...numeros){
+//     //percorre o array de numeros criado pelo rest operator ...numeros
+//     for(let numero of numeros){
+//         //faz a conta de acordo com o operador
+//         if(operador === "+") acumulador += numero
+//         if(operador === "-") acumulador -= numero
+//         if(operador === "x") acumulador *= numero
+//         if(operador === "/") acumulador /= numero
+//     }
+
+//     console.log(acumulador)
+// }
+
+// =Função anonima=
+// const conta = function (operador, acumulador, ...numeros){
+//     //percorre o array de numeros criado pelo rest operator ...numeros
+//     for(let numero of numeros){
+//         //faz a conta de acordo com o operador
+//         if(operador === "+") acumulador += numero
+//         if(operador === "-") acumulador -= numero
+//         if(operador === "x") acumulador *= numero
+//         if(operador === "/") acumulador /= numero
+//     }
+
+//     console.log(acumulador)
+// }
+
+//=Arrow function=
+const conta =  (operador, acumulador, ...numeros) => {
+    //percorre o array de numeros criado pelo rest operator ...numeros
+    for(let numero of numeros){
+        //faz a conta de acordo com o operador
+        if(operador === "+") acumulador += numero
+        if(operador === "-") acumulador -= numero
+        if(operador === "x") acumulador *= numero
+        if(operador === "/") acumulador /= numero
+    }
+
+    console.log(acumulador)
 }
 
-funcao(['Pedrinho', 'doze', 30])
+
+conta("/", 400, 2, 2) /* 400 / 2 = 200 / 2 =*/
+
+
+
