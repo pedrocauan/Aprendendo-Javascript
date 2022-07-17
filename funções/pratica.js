@@ -1,43 +1,57 @@
 // === O arquivo prática é usado para  praticar durante as video aulas ===
 
-// hoisting é poder executar a função em qualquer canto do código uma vez que ela ja ta declarada
-falaOi()
-//declaração de função (function hoisting)
-function falaOi(){
-    console.log("Oie")
+// function funcao(a,b,c){
+//     //Dentro  do escopo existe uma variavel chamada arguments que guarda todos os valores passados na chamada dela
+//     //argument n existe em arrow function
+//     let total = 0
+//     for (let argument of arguments){
+//         total+= argument
+//     }
+//     console.log(`Parametros-> a: ${a}, b: ${b}, c: ${c}`)
+//     console.log(`Quantidade de argumentos: ${arguments.length}`)
+//     console.log(`Soma dos arguments: ${total}`) //Retorna 15 (soma de todos os arguments)
+// }
+
+// funcao(1,2,3,4,5)
+
+/*caso um parametro não seja passado, ele fica como  o valor padrao undefined*/
+// function funcao(a,b,c,d,e,f) {
+//     console.log(a,b,c,d,e,f)
+// }
+
+// funcao(1,2,3)
+
+// == PARAMETROS COM VALOR DEFAULT VIA SHORT CIRCUIT ==
+// function funcao(a,b){
+//     b = b || 0 /*é possivel resolver com short circuit*/
+//     console.log(a+b)
+// }
+
+// funcao(2)
+
+/* == PARAMETROS COM VALOR DEFAULT == */
+// function funcao(a,b = 2, c = 4){
+
+//     console.log(a+b+c) /*exibe 22 )*/
+// }
+// //Para fazer com que um arg receba o valor padrao de um parametro, passe undefined
+// funcao(2,undefined, 20)
+
+/* == ATRIBUIÇÃO VIA DESESTRUTURAÇÃO == */
+// function funcao({nome, sobrenome, idade}){
+
+//     console.log(nome, sobrenome, idade)
+// }
+// //criação do objeto
+// const pessoa = {nome:"pedro", sobrenome: "cauan", idade: 20}
+// //passagem dele como parametro
+// funcao(pessoa)
+
+
+// === ATRIBUIÇÃO VIA DESESTRUTURAÇÃO DE ARRAY ===
+
+function funcao([valor1,valor2,valor3]) {
+    console.log(valor1,valor2,valor3)
 }
 
-
-//First Class Objecs | (Objetos  de primeira classe)
-// First Class Objetos = Poder guardar uma função em uma variavel || Poder tratar a função como um dado
-// Function Expression \/
-const souUmDado = function(){
-    console.log("   Sou um Dado")
-}
-
-//É possível passar uma função como parametro para que outra função seja executada
-function executaFuncao(funcao){
-    console.log("Vou executar sua função abaixo:")
-    funcao()
-}
-
-executaFuncao(souUmDado)
-
-//Arrow Functions
-const funcArrow = () => {
-    console.log("Sou uma arrow function")
-}
-
-funcArrow()
-
-//Jogar função dentro de um objeto
-const obj = {
-    // fala: function(){
-    //     console.log("Estou executando uma função dentro de um objeto !! ")
-    // }
-    fala(){
-        console.log("Estou executando uma função dentro de um objeto !!")
-    }
-}
-obj.fala()
-
+funcao(['Pedrinho', 'doze', 30])

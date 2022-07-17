@@ -1,0 +1,5 @@
+function funcao(){
+
+}
+
+funcao()
