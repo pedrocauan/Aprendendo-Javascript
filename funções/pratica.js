@@ -19,10 +19,6 @@
 // soma2(5,2)
 
 /* === RETORNANDO OBJETO === */
-// function criaPessoa(nome, sobrenome){
-//     return {nome,sobrenome}
-// }
-
 // const criaPessoa = function(nome, sobrenome){
 //     return {nome, sobrenome}
 // }
