@@ -45,4 +45,3 @@ const cozinha = porta("Cozinha")
 
 console.log(banheiro())
 console.log(cozinha())
-
