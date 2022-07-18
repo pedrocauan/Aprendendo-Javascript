@@ -1,20 +1,48 @@
-// === O arquivo prática é usado para  praticar durante as video aulas ===
 
+/*Clousure é a habilidade que a função tem de acessar o seu escopo léxico*/
 
-// Escopo lexico é a capacidade que uma função tem de acessar os "vizinhos" dela
-// ex:
-const falaNome = function() {
-    const nome = "joao" /* vizinho */
-    console.log(nome) /* acessa o vizinho (joao)*/
-}
+// const valor = 0 /* e também a esses caras*/
+// const nome2 = "maria"
 
-falaNome()
-
-// const usaFalaNome = function(){
-//     falaNome() /*acessa o vizinho vizinho (joao)*/
+// function retornaFuncao(nome/*esse cara*/){
+//     return function(){
+//         return nome /* esse cara tem acesso a*/
+//     }
 // }
 
+// const funcao = retornaFuncao("Joao")
+// const funcao2 = retornaFuncao("Pedro")
+// console.dir(funcao()) /*vai exibir o joao no closure*/
+// console.dir(funcao2()) /*vai exibir o pedro no closure*/
 
-// usaFalaNome()
 
+
+
+
+//Todo vez que alguém entra no comodo, essa pessoa olha para janela
+let janela
+function porta(comodo){
+    return function(){
+        janela = `Olhei pela janela de dentro do ${comodo}`
+        console.log(janela)
+        return comodo
+    }
+}
+
+const porta = function(comodo) {
+    return function() {
+        janela = `Olhei pela janela de dentro do ${comodo}`
+        console.log(janela)
+        return comodo
+    }
+}
+
+const porta = (comodo) => () => comodo
+
+
+const banheiro = porta("Banheiro")
+const cozinha = porta("Cozinha")
+
+console.log(banheiro())
+console.log(cozinha())
 
