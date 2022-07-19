@@ -37,6 +37,7 @@
 //     }
 // }
 
+//Diz qual comodo a pessoa acessou
 const porta = (comodo) => () => `Você acessou o comodo: ${comodo}`
 
 
