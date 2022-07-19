@@ -1,48 +1,61 @@
 
-/*Clousure é a habilidade que a função tem de acessar o seu escopo léxico*/
 
-// const valor = 0 /* e também a esses caras*/
-// const nome2 = "maria"
+function rand(min = 1000, max = 3000){
+    const num = Math.random() * (max - min) +  min
+    return Math.floor(num)
+}
 
-// function retornaFuncao(nome/*esse cara*/){
-//     return function(){
-//         return nome /* esse cara tem acesso a*/
-//     }
-// }
-
-// const funcao = retornaFuncao("Joao")
-// const funcao2 = retornaFuncao("Pedro")
-// console.dir(funcao()) /*vai exibir o joao no closure*/
-// console.dir(funcao2()) /*vai exibir o pedro no closure*/
+function f1(callback) {
+    setTimeout(function () {
+        console.log("f1")
+        if(callback) callback()
+    }, rand())
 
 
+}
+
+function f2(callback) {
+    setTimeout(function () {
+        console.log("f2")
+        if(callback) callback()
+    }, rand())
 
 
+}
 
-//Todo vez que alguém entra no comodo, essa pessoa olha para janela
-// let janela
-// function porta(comodo){
-//     return function(){
-//         janela = `Olhei pela janela de dentro do ${comodo}`
-//         console.log(janela)
-//         return comodo
-//     }
-// }
-
-// const porta = function(comodo) {
-//     return function() {
-//         janela = `Olhei pela janela de dentro do ${comodo}`
-//         console.log(janela)
-//         return comodo
-//     }
-// }
-
-const porta = (comodo) => () => `Você acessou o comodo: ${comodo}`
+function f3(callback) {
+    setTimeout(function () {
+        console.log("f3")
+        if(callback) callback()
+    }, rand())
 
 
-const banheiro = porta("Banheiro")
-const cozinha = porta("Cozinha")
+}
 
-console.log(banheiro())
-console.log(cozinha())
+//callback hell
+
+// f1(function(){
+//     f2(function(){
+//         f3(function(){
+//             console.log("Olá mundo")
+//         })
+//     })
+// })
+
+//As callbacks  servem para dar uma ordem sequencial a processos multiplos
+//f1 chama f2, f2 chamada f3 e f3 chama "hello mundo"
+f1(f1Callback())
+
+function f1Callback(){
+    f2(f2Callback)
+}
+
+function f2Callback() {
+    f3(f3Callback)
+}
+
+function f3Callback(){
+    console.log("Hello world")
+}
+
 
