@@ -5,20 +5,16 @@
 //escopo:
 //(function(){})()
 
-//Protege a função do escopo global 
-(function( idade, peso, altura){
-    
-    const sobrenome = "Silva"
-    function getNome(nome){
-        return nome + " " + sobrenome
+function createPerson(name, weight, height) {
+    return {
+        
+        imc(){
+            const indice = weight / height ** 2
+            return indice.toFixed(2)
+        }
     }
-    
-    function falaNome(){
-        console.log(getNome("Pedro"))
-    }
+}
 
-    falaNome()
-    console.log(idade, peso, altura)
-})(12,45.5, 1.82) //uma IIFE pode passar parametros  para as funções dentro dela 
 
-const nome = "pedrao" //Impede que a variavel nome dentro da IIFE entre em conlito com essa daqui
+const p1 = createPerson("pedro", 80, 1.75)
+console.log(p1.imc())
