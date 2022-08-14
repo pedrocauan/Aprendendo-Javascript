@@ -1,42 +1,46 @@
-function Produto(nome, preco, estoque) {
-    let privado = estoque
-    this.nome = nome,
-    this.preco = preco,
+function Produto(nome,preco, estoque) {
+    this.nome = nome;
+    this.preco = preco;
+    
+    let estoquePrivado = estoque
+    //define propriedade por propriedade
     Object.defineProperty(this, "estoque", {
-        enumerable: true, //mostra chave
-        configurable: true, //reconfigura chave  
+        enumerable: true, //fala se ele é visivel
+        configurable: true, //pergunta se pode reconfigurar 
         get: function() {
-            return privado
+            return estoquePrivado
         },
-
         set: function(valor){
-            if(typeof valor !== 'number')
-                throw new TypeError("O ESTOQUE PRECISA SER UM NÚMERO !!")
-            privado = valor
+            if(!Number.isInteger(valor))
+                throw new TypeError("O estoque precisa ser um numero inteiro")
+            estoquePrivado = valor
         }
-        
-
-    })
+    }) 
 
 }
 
-function criaProduto(nome){
-    return{
-        get nome(){
-            return nome
+
+function criaProduto(nome) {
+    let nomeRecebido = nome
+    return {
+        
+        get nome() {
+            return  nomeRecebido
         },
+
         set nome(valor){
-            valor = valor.replace("jeans", "")
-            nome =  valor
+            if(valor.length > 10)
+                throw new TypeError("NOME DO PRODUTO MUITO GRANDE")
+            nomeRecebido = valor
         }
     }
 }
 
-const produto = criaProduto("Camisa")
-console.log(produto.nome)
-produto.nome = "calça jeans"
-console.log(produto.nome)
+//get e set com a função construtora
+const p1 = new Produto("camiseta",20, 3);
+p1.estoque = 3;
+console.log(p1)
 
-// const p1 = new Produto("Camiseta", 20, 3)
-// p1.estoque = "AAAA"
-// console.log(p1.estoque)
+//get e set com a função factory
+const p2 = new criaProduto("camisa")
+console.log(p2)
