@@ -24,7 +24,7 @@ class DispositivoEletronico {
 
     }
 }
-
+/**/ 
 //herda dispositivoEletronico
 class Smartphone extends DispositivoEletronico {
     constructor(nome, cor, modelo) {
