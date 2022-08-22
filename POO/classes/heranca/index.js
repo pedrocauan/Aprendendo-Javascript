@@ -34,7 +34,7 @@ class Smartphone extends DispositivoEletronico {
     }
 }
 
-//herda tablet
+//herda Dispositivo eletronico
 class Tablet  extends DispositivoEletronico {
     constructor(nome, temWifi) {
         super(nome)
@@ -46,6 +46,7 @@ class Tablet  extends DispositivoEletronico {
     // }
 }
 
+/** */
 const smart = new Smartphone(`Samsung`, `preto`, `galaxy S10`)
 const t1 = new Tablet(`iPad`, true)
 
