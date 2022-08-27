@@ -20,6 +20,12 @@ class ValidaFormulario {
 
   camposSaoValidos() {
     let valid = true
+
+    //remove todas as mensagens de erro quando o form é enviado
+    for(let errorText of  document.querySelectorAll(".error-text"))
+    {
+      errorText.remove()
+    }
     //pega todos os campos do form
     for (let campo of this.formulario.querySelectorAll(".validar")) {
       //label com o nome dos inputs
