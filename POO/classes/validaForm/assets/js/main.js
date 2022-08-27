@@ -46,6 +46,11 @@ class ValidaFormulario {
         }
       }
 
+      if(campo.classList.contains("usuario")){
+        if(!this.validaUsuario(campo)){
+          valid = false
+        }
+      }
 
     }
   }
@@ -56,6 +61,20 @@ class ValidaFormulario {
       this.criaErro(campo, "CPF INVÁLIDO !!")
       return false
     }
+    return true
+  }
+
+  validaUsuario(input) {
+    //ve se o campo ta vazio
+    if(!this.formulario.querySelector(".usuario").value)
+      return false
+    //ve se o campo tem menos de 4 caracteres
+    if(!(this.formulario.querySelector(".usuario").value.length > 3))
+      return false
+    //ve se o campo tem mais de 11 caracteres
+    if(!(this.formulario.querySelector(".usuario").value.length < 12))
+       return false
+    console.log("PASSOU")
     return true
   }
 
