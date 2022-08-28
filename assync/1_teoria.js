@@ -11,7 +11,7 @@
      . - enviar email   //DEMORA UM TEMPO PARA SER FEITO
 */ 
 
-function enviarEmail(corpo, para) {
+function enviarEmail(corpo, para,callBack) {
     setTimeout(()=> {
         console.log(`
             Para: ${para}
@@ -20,9 +20,12 @@ function enviarEmail(corpo, para) {
             -------------------------
             De: Pedrones
             `)
+            callBack()
     }, 8000)
 }
 console.log("Inicio do envio de e-mail!!") //executa
-enviarEmail("Oi, eu sou peedrones", "pedrones@gmail.com") //executa mas nao para a execução do programa
+enviarEmail("Oi, eu sou peedrones", "pedrones@gmail.com", () => {
+    console.log(`TUDO OK !!`)// executa
+
+}),  //executa mas nao para a execução do programa
 console.log(`email enviado !! Deve chegar em alguns minutos`) //executa
-console.log(`TUDO OK !!`)// executa
