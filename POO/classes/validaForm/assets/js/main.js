@@ -45,8 +45,10 @@ class ValidaFormulario {
           valid = false
         }
       }
-
+      //pega o campo usuario
       if(campo.classList.contains("usuario")){
+        //valida o campo usuario
+        //console.log(this.validaUsuario(campo))
         if(!this.validaUsuario(campo)){
           valid = false
         }
@@ -64,19 +66,27 @@ class ValidaFormulario {
     return true
   }
 
-  validaUsuario(input) {
-    //ve se o campo ta vazio
-    if(!this.formulario.querySelector(".usuario").value)
+  validaUsuario(campo) {
+    const usuario = campo 
+    console.log(usuario.value.length)  
+    //ve se o campo tem menos  de 4 caracteres
+    if(!(usuario.value.length >= 4)){
+
+      this.criaErro(usuario, "O usuario precisa ter de 4 a 12 letras")
       return false
-    //ve se o campo tem menos de 4 caracteres
-    if(!(this.formulario.querySelector(".usuario").value.length > 3))
+    }
+    //ve se o campo tem mais de 12 caracteres
+    if(!(usuario.value.length <= 12)){
+      this.criaErro(usuario, "O usuario precisa ter de 4 a 12 aletras")
       return false
-    //ve se o campo tem mais de 11 caracteres
-    if(!(this.formulario.querySelector(".usuario").value.length < 12))
-       return false
-    console.log("PASSOU")
-    return true
+    }
+    //ve se o campo possui caracteres especiais
+    if(!usuario.value.match(/^[a-zA-Z0-9]+$/g)){
+      this.criaErro(campo, "Nome de usuario só pode conter apenas letras [a-Z] ou números[ 0-9]")
+      return false
   }
+  return true
+}
 
   criaErro(campo, msg) {
     const  div = document.createElement("div")
@@ -87,9 +97,6 @@ class ValidaFormulario {
     campo.insertAdjacentElement('afterend', div)
 
   }
-
-
-
 }
 
 valida = new ValidaFormulario()
