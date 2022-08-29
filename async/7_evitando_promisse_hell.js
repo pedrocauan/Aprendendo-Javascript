@@ -19,7 +19,7 @@ function enviarEmail(corpo, para) {
     //Quando trabalhamos com promises não temos necessidade de usar callback
     return new Promise((resolve, reject) => {
         setTimeout(() => {
-            let deuErro = false
+            let deuErro = true
             if (!deuErro) {
                 resolve({ time: 12, to: "pedrinho@gmail.com" })
 
@@ -79,11 +79,17 @@ async function envia() {
 
     console.log(`Olá, ${email}`)
     //envia email
-    enviarEmail().then(() => {
+    try{
+        await enviarEmail()
+        console.log(`Email enviado para o usuario com id ${id}`)
+    } catch(e) {
+        console.log(e)
+    }
+   /*  enviarEmail().then(() => {
         console.log(`Email enviado para o usuario com id ${id}`)
     }).catch((e)=> {
         console.log(e)
-    })
+    }) */
 }
 
 envia()
