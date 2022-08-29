@@ -25,7 +25,7 @@ function enviarEmail(corpo, para) {
 
             } else {
 
-                reject("deu erro")
+                reject("erro ao enviar o email")
             }
         }, 4000)
     })
@@ -46,28 +46,44 @@ function pegaUsuario() {
 }
 
 /*== ISSO AQUI ==*/
-async function main()  {
+/* async function main()  {
     const users =  await pegaUsuario()
     console.log(users)
 }
-main()
+main() */
 //== É A MESMA COISA Q ISSO ==
 /*pegaUsuario().then((user) =>{
     console.log(users)
 })*/
 
 
-/* console.log("INICIO")
+console.log("INICIO")
 //executa primeira essa promise -> busca o ID do user no banco                            
- pegarId().then(id => {
-    //depois essa -> busca o email no banco
-    buscaEmailBanco(id).then(email => {
-        //depois essa -> envia o email para o user com o id  pego
-        enviarEmail("Olá, como vai?", email).then(() => {
-            console.log("Email enviado para usuario com id: " + id)
-        }).catch( e => {
-            console.log(e)
-        })
+ 
+
+async function id() {
+    const id =  pegarId()
+    return id
+}
+
+async function buscaEmail() {
+    const email =  buscaEmailBanco(id)
+    return email
+}
+
+async function envia() {
+    //pega  o email
+    const email = await buscaEmail()
+    //pega o id
+    const id =  await pegarId()
+
+    console.log(`Olá, ${email}`)
+    //envia email
+    enviarEmail().then(() => {
+        console.log(`Email enviado para o usuario com id ${id}`)
+    }).catch((e)=> {
+        console.log(e)
     })
- })
- console.log("FIM") */
+}
+
+envia()
