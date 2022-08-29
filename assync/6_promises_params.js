@@ -15,22 +15,25 @@ function enviarEmail(corpo, para) {
     //Quando trabalhamos com promises não temos necessidade de usar callback
     return new Promise((resolve, reject) => {
         setTimeout(() =>{
-             let deuErro = true
+             let deuErro = false
             console.log("Email enviado")
              if(!deuErro) {
                 //promessa cumprimida
-                resolve() //Promessa OK
+                resolve({time: 12, to: "pedrinho@gmail.com"}) //Promessa OK
 
              } else {
                 //promessa nao cumprida
-                reject() //Foi mal, eu falhei !!
+                reject("deu erro") //Foi mal, eu falhei !!
              }
         }, 4000)
     })
 }
 // .then() -> DAÍ, quando a promessa for cumprida voce faz ela
-enviarEmail("Olá", "Pedrinho@gmail.com").then( (dados)=> {
-    console.log("Você enviou o email. Parabéns, cumpriu sua promise")
-} ).catch(() => {
-    console.log("Que pena, não deu :(")
+enviarEmail("Olá", "Pedrinho@gmail.com").then( ({time, to})=> {
+    console.log(`
+        time: ${time}
+        to: ${to}
+    `)
+} ).catch((e) => {
+    console.log("parece que " + e )
 })
