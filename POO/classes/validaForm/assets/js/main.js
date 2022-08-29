@@ -15,11 +15,9 @@ class ValidaFormulario {
   handleSubmit(e) {
     e.preventDefault()
     const camposValidos = this.camposSaoValidos()
-    console.log(camposValidos)
     const senhasValidas = this.senhasSaoValidas()
-    console.log(senhasValidas)
 
-
+    //envia o formulário para o backend se ele tiver válido
     if(camposValidos && senhasValidas){
       this.formulario.submit() //envia o formulário 
     }
@@ -54,7 +52,7 @@ class ValidaFormulario {
     }
     //pega todos os campos do form
     for (let campo of this.formulario.querySelectorAll(".validar")) {
-      //label com o nome dos inputs
+      //label com o nome dos inputs (nome, sobrenome, senha, etc..)
       const label = campo.previousElementSibling.innerHTML
 
       // ========= VALIDA OS CAMPOS DO FORM ==========
