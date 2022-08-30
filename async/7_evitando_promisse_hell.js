@@ -19,7 +19,7 @@ function enviarEmail(corpo, para) {
     //Quando trabalhamos com promises não temos necessidade de usar callback
     return new Promise((resolve, reject) => {
         setTimeout(() => {
-            let deuErro = true
+            let deuErro = false
             if (!deuErro) {
                 resolve({ time: 12, to: "pedrinho@gmail.com" })
 
