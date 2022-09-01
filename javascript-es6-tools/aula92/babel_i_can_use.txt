@@ -12,8 +12,23 @@ Site: babeljs.io
 npm:
 npm install --save-dev @babel/cli @babel.preset-env @babel/core
 
+- O babel gera um novo arquivo bundle.js que contém o código moderno convertido para o código antigo
+
+comando:
+
+
 
 === i can use ===
 - Site para ver os navegadores compatíveis com os comandos da linguagem
 
 
+babel ./main.js -o ./bundle.js --presets=@babel/env -w
+
+onde:
+1 - babel -> executa o babel
+2 - ./main.js -> arquivo com o código javascript moderno
+3 - -o -> fala pro babel gerar um novo arquivo de saída
+4 - ./bundle.js -> arquivo que vai conter o código javascript antigo transpilado
+
+/*source to source compiler -> também associado a transpilador*/
+/* também sao encontrados os termos transpiling*/
