@@ -1,0 +1,19 @@
+- Se escrevessemos um código e esse código  funciona-se em todos os navegadores?
+- Como seria feita essa tradução?
+
+ ====== BABEL ======
+- O babel é um  TRANSPILADOR
+- Um transpilador converte uma linguagem de  alto/medio nível para outra linguage de alto/medio nível
+- Recebe código-fonte em linguagem de alto/médio nível como entrada e, como saída, produz código em outra linguagem de alto/médio nível. Ex.: Typescript -> Javascript.
+
+- No javascript, o babel é utilizado para converter código javascript moderno em código javascript antigo
+
+Site: babeljs.io 
+npm:
+npm install --save-dev @babel/cli @babel.preset-env @babel/core
+
+
+=== i can use ===
+- Site para ver os navegadores compatíveis com os comandos da linguagem
+
+
