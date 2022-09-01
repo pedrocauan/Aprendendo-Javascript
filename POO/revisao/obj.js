@@ -1,42 +1,14 @@
-function Produto(nome, preco, estoque) {
-    let privado = estoque
-    this.nome = nome,
-    this.preco = preco,
-    Object.defineProperty(this, "estoque", {
-        enumerable: true, //mostra chave
-        configurable: true, //reconfigura chave  
-        get: function() {
-            return privado
-        },
-
-        set: function(valor){
-            if(typeof valor !== 'number')
-                throw new TypeError("O ESTOQUE PRECISA SER UM NÚMERO !!")
-            privado = valor
-        }
-        
-
-    })
+function Pessoa(nome,sobrenome) {
+    this.nome = nome
+    this.sobrenome = sobrenome
+    Object.freeze(this) //impete alteração das propriedades do objeto
 
 }
 
-function criaProduto(nome){
-    return{
-        get nome(){
-            return nome
-        },
-        set nome(valor){
-            valor = valor.replace("jeans", "")
-            nome =  valor
-        }
-    }
-}
+const p1 = new Pessoa("Pedro", "Cauan")
+delete p1.nome
+const p2 = new Pessoa("Joao", "Carlos")
 
-const produto = criaProduto("Camisa")
-console.log(produto.nome)
-produto.nome = "calça jeans"
-console.log(produto.nome)
+console.log(p1)
+console.log(p2)
 
-// const p1 = new Produto("Camiseta", 20, 3)
-// p1.estoque = "AAAA"
-// console.log(p1.estoque)

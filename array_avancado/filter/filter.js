@@ -10,6 +10,7 @@
 
 
 
+
 // function callbackFilter (valor, indice, array){
 //     console.log(`valor: ${valor}`)
 //     console.log(`indice: ${indice}\n`)
@@ -31,27 +32,34 @@
 // retorne as pessoas  cujo nome termina com a letra [a]
 const pessoas = [
     {nome: "Luiz", idade: 62},
-    {nome: "Maria", idade: 23},
+    {nome: "Maria", idade: 12},
     {nome: "Eduardo", idade: 55},
     {nome: "Leticia", idade: 19},
     {nome: "Rosana", idade: 32},
-    {nome: "Wallace", idade: 45}
+    {nome: "Wallace", idade: 11}
 ]
 
-//Pessoas com  5 letras ou mais
-const fiveLettersMore = pessoas.filter((obj) => obj.nome.length >= 5)
 
-//Pessoas com idade mairo que 50
-const fiftyYearsMore = pessoas.filter((obj) => obj.idade > 50)
-
-//pessoas com a ultima letra sendo a
-const lastLetterA = pessoas.filter(obj => {
-    //endsWith -> ve se a string termina com a letra passada no parametro
-    return obj.nome.toLowerCase().endsWith("a")
+const terminaComA = pessoas.filter(function(p){
+    const ultimaLetra = p.nome.length-1
+    return p.nome[ultimaLetra] === "a"
 })
 
-// Resultado na tela
-console.log(`\nMais de 5 letras:\n `, fiveLettersMore)
-console.log(`\nMais de 50 anos:\n `,fiftyYearsMore)
-console.log(`\nultima letra termina com [a]:\n `, lastLetterA)
+console.log(terminaComA)
+// //Pessoas com  5 letras ou mais
+// const fiveLettersMore = pessoas.filter((obj) => obj.nome.length >= 5)
+
+// //Pessoas com idade mairo que 50
+// const fiftyYearsMore = pessoas.filter((obj) => obj.idade > 50)
+
+// //pessoas com a ultima letra sendo a
+// const lastLetterA = pessoas.filter(obj => {
+//     //endsWith -> ve se a string termina com a letra passada no parametro
+//     return obj.nome.toLowerCase().endsWith("a")
+// })
+
+// // Resultado na tela
+// console.log(`\nMais de 5 letras:\n `, fiveLettersMore)
+// console.log(`\nMais de 50 anos:\n `,fiftyYearsMore)
+// console.log(`\nultima letra termina com [a]:\n `, lastLetterA)
 

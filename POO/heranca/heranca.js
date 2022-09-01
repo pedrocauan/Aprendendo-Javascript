@@ -68,14 +68,16 @@ function Caneca(nome, preco, material, estoque){
     })
 }
 
+//Adiciona caneca no prototype de produto
 Caneca.prototype = Object.create(Produto.prototype)
+//Devolve o construtor pra caneca
 Caneca.prototype.constructor = Caneca
 
 const camiseta = new Camiseta("regata", 7.5, "Preta")
 const caneca = new Caneca("Caneca Homem Aranha", 10, "ceramica", 20)
-caneca.estoque = 100
+caneca.estoque = 100 //setter
 
 console.log(camiseta)
 console.log(caneca)
-console.log(caneca.estoque)
+console.log(caneca.estoque) //getter
 

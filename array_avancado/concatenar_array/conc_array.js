@@ -13,7 +13,7 @@
 // const a2 = ["miranda"]
 // const a3 = [...a1, ...a2]
 
-// console.log(a3)
+// console.log(a3) /*r: ["pedro", "miranda"]*/
 
 //=== EXEMPLO 3 ===
 // const a1 = "pedro"
@@ -28,8 +28,9 @@
 // const a2 = "miranda"
 // const a3 = a1.concat()
 
-const obj1 = {nome:"pedro", idade: 22, altura: 1.75}
-const obj2 = {nome:"luiz", idade: 27, altura: 1.80}
-const obj3 = {nomes:[...[obj1], ...[obj2]]}
+// const obj1 = {nome:"pedro", idade: 22, altura: 1.75}
+// const obj2 = {nome:"luiz", idade: 27, altura: 1.80}
+// const obj3 = {nomes:[...[obj1], ...[obj2]]}
 
-console.log(obj3.nomes)
+// console.log(obj3.nomes)
+
