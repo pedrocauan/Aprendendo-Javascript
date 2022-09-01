@@ -27,19 +27,20 @@ document.addEventListener("click", (e) => {
 })
 
 async function carregaPagina(el) {
-  const href = el.getAttribute("href") /*pega o link q ta na tag a*/
-  console.log(href)
-  const objConfig = {
-    method: "GET",
-    url: href /*link pego do html*/
-  } 
   try{
-    const response = await request(objConfig)
-    carregaResultado(response)
-  } catch(e) {
-    console.log(e)
+
+    const href = el.getAttribute("href") /*pega o link q ta na tag a*/
+    const response = await fetch(href)
+    
+    if(response.status !== 200)
+      throw new Error(`ERROR 404 NOT FOUND PORRA`)
+    const html = await response.text()
+    carregaResultado(html)
+    
   }
-  
+  catch(error) {
+    console.error(`deu erro: ${error}`)
+  }
 }
 
 function carregaResultado(response) {
@@ -47,7 +48,10 @@ function carregaResultado(response) {
   resultado.innerHTML = response
 }
 
-
+/**
+ * Uncaught -> erro nao tratado
+ * 
+ */
 
 
 
