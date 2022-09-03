@@ -1,0 +1,6 @@
+
+site do webpack:
+webpack.js.org
+script para instalar o webpack com o babel:
+
+npm i --save-dev @babel/preset-env @babel/cli @babel/core babel-loader webpack  webpack-cli core-js@2 regenerator-runtime
