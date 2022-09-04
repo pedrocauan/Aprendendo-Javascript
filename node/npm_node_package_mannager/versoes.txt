@@ -1,0 +1,18 @@
+^ -> atualiza tanto a minor quanto a patch
+~ -> mexe só na versão patch
+
+
+2.1.0
+
+2 -> major
+1 -> minor
+0 -> patch
+
+PATCH -> usado para correção de bugs ou ajustes
+2.1.1
+
+MINOR -> usado quando se adiciona um recurso novo (ou algo que nao quebre a compatibilidade)
+2.2.0
+
+MAJOR ->  usado quando a versão muda
+3.0.0
