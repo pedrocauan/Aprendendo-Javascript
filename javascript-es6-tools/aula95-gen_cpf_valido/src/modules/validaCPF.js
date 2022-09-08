@@ -1,4 +1,4 @@
-function ValidaCpf(cpf = '') {
+export default function ValidaCpf(cpf = '') {
     this.cpfEnviado = cpf.replace(/\D+/g, "") /* /\D+/g, "" remove tudo o que nao for numero da string*/
     this.cpfSoNumeros = cpf.replace(/\D+/g, "")
 
@@ -58,4 +58,5 @@ ValidaCpf.prototype.valida = function() {
     return true
 
 }
+
 

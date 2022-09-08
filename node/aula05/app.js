@@ -3,6 +3,7 @@ const caminhoArquivo = path.resolve(__dirname, "teste.json")
 const escreve = require("./modules/escrever.js")
 const ler = require("./modules/ler")
 
+console.log("")
 // const pessoas = [
 //     {nome: "pedro"},
 //     {nome: "maria"},
