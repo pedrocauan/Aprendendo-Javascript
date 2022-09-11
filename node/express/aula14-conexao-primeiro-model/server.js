@@ -7,7 +7,6 @@ const mongoose = require("mongoose")
 //conecta com a database
 mongoose.connect(process.env.CONNECTIONSTRING/*guarda a conexao da db em um arquivo*/)
     .then(() => {
-        console.log("Conectei a base de dados")
         //emite um sinal pra database
         app.emit("pronto")
     })
