@@ -12,16 +12,23 @@ mongoose.connect(process.env.CONNECTIONSTRING)
     .catch(e => console.log(e))
 //importando bibliotecas do cookie de sessao
 const session  = require("express-session")
+//salva as sessões na base de dados
 const MongoStore = require("connect-mongo")
+//uma mensagem que some depois que é lida
 const flash = require("connect-flash")
 const routes = require("./routes")
 const path = require("path")
 const helmet = require("helmet")
+//faz com que nenhum site externo possa postar coisas dentro da aplicação
 const CSRF = require("csurf")
 const { middlewareGlobal, outroMiddleware, checkCSRF, middlewareCSRF} = require("./src/middlewares/middleware.js")
 
+//Helmet
 app.use(helmet())
+
 app.use(express.urlencoded({ extended: true }))
+app.use(express.json())
+//imagens css javascript, arquivos que podem ser utilizados  na nossa aplicação que sao estaticos
 app.use(express.static(path.resolve(__dirname, "public")))
 
 //definindo cookies de sessão
@@ -48,11 +55,11 @@ app.use(flash())
 app.set("views",path.resolve(__dirname, "src", "views") )
 app.set("view engine", "ejs")
 
-app.use(CSRF())
+app.use(CSRF()) /*evita o csrf*/
 //Nossos próprios middlewares
 app.use(middlewareGlobal)
 app.use(checkCSRF)
-app.use(middlewareCSRF)
+app.use(middlewareCSRF) /*valida o token csrf*/
 app.use(outroMiddleware)
 
 // ROTAS
