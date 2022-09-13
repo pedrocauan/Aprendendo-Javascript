@@ -9,7 +9,6 @@ route.post("/", homeController.trataPost)
 //ROTAS CONTATO
 route.get("/contato", contatoController.paginaInicial)
 
-//
 
 
 module.exports = route
